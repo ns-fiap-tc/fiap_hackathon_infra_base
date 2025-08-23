@@ -69,3 +69,21 @@ resource "aws_security_group" "eks_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+# Instala o chart do Helm para o Metrics Server
+resource "helm_release" "metrics_server" {
+  # Garante que o cluster e os nós estejam prontos antes de instalar
+  depends_on = [aws_eks_node_group.hacka_node_group]
+
+  name       = "metrics-server"
+  namespace  = "kube-system" # Namespace padrão para o metrics-server
+  repository = "https://kubernetes-sigs.github.io/metrics-server/"
+  chart      = "metrics-server"
+  version    = "3.12.1" # É uma boa prática fixar a versão do chart
+
+  # IMPORTANTE: Adiciona o argumento necessário para funcionar corretamente no EKS
+  set {
+    name  = "args[0]"
+    value = "--kubelet-insecure-tls"
+  }
+}
