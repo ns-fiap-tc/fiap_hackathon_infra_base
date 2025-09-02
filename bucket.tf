@@ -2,6 +2,7 @@
 resource "aws_s3_bucket" "bucket-hacka" {
   # IMPORTANTE: O nome do bucket deve ser globalmente único.
   bucket = "bucket-hacka"
+  force_destroy = true
 }
 
 # 2. Habilita o uso de ACLs (Listas de Controle de Acesso) no bucket
