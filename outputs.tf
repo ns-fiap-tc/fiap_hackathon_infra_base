@@ -7,3 +7,8 @@ output "vpc_id" {
 output "eks_cluster_name" {
   value = aws_eks_cluster.hacka_cluster.name
 }
+
+output "bucket_name" {
+  description = "O nome do bucket S3 criado."
+  value       = aws_s3_bucket.bucket-hacka.bucket
+}
