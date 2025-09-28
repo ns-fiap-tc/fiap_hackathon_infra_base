@@ -1,7 +1,7 @@
 # FIAP Hackaton - Infra Base
-Repositório com o microsserviço de upload para o hackathon
+Repositório com o código terraform para provisionamento da infra-base para o hackathon
 
-Este é o repositório que contém o código fonte do serviço de upload da aplicação [FIAP Hackathon](https://github.com/ns-fiap-tc/fiap_hackathon_doc). Nele você encontrará arquivos de configuração do Terraform que definem a infraestrutura que serve como base para a aplicação e outros recursos.
+Este é o repositório que contém o de provisionamento da infra-base da aplicação [FIAP Hackathon](https://github.com/ns-fiap-tc/fiap_hackathon_doc). Nele você encontrará arquivos de configuração do Terraform que definem a infraestrutura que serve como base para a aplicação e outros recursos.
 
 <details>
   <summary>Detalhamento execução do projeto</summary>
